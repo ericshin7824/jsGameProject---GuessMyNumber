@@ -1,0 +1,307 @@
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Press Start 2P", sans-serif;
+}
+
+body .max-width {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+body .nav-wrapper {
+  background: #111111;
+  color: #fff;
+  width: 100%;
+  height: 60px;
+  -webkit-filter: drop-shadow(0 -5px 10px #aaaaaa);
+          filter: drop-shadow(0 -5px 10px #aaaaaa);
+  position: fixed;
+  top: 0;
+  z-index: 999;
+}
+
+body .nav-wrapper .nav {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .nav-wrapper .nav .logo h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+}
+
+body main {
+  background: #333;
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body main section.guess-my-number {
+  position: relative;
+  background: #222;
+  width: 620px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 4px solid #eee;
+  -webkit-box-shadow: 0 20px 50px 5px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 20px 50px 5px rgba(0, 0, 0, 0.4);
+}
+
+body main section.guess-my-number .tittle {
+  position: relative;
+  background: #eee;
+  width: 100%;
+  padding: 20px 60px;
+  color: #222;
+  text-align: center;
+  white-space: nowrap;
+}
+
+body main section.guess-my-number .tittle h1 {
+  margin-top: 15px;
+  text-transform: uppercase;
+  font-size: 1.7em;
+  letter-spacing: 2px;
+}
+
+body main section.guess-my-number .tittle span {
+  font-size: 0.7em;
+  letter-spacing: 1px;
+}
+
+body main section.guess-my-number .screen {
+  position: relative;
+  background: transparent;
+  width: 100%;
+  padding: 30px 20px 80px;
+  color: #eee;
+}
+
+body main section.guess-my-number .screen .scores-container {
+  color: #eee;
+  font-size: 0.7em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+body main section.guess-my-number .screen .scores-container .left p:first-child {
+  margin-bottom: 15px;
+}
+
+body main section.guess-my-number .screen .number-wrapper {
+  width: 100%;
+  height: 200px;
+  margin: 40px 0 0;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body main section.guess-my-number .screen .number-wrapper .number {
+  font-size: 5em;
+}
+
+body main section.guess-my-number .screen .message {
+  width: 100%;
+  text-align: center;
+  font-size: 1.2em;
+  white-space: nowrap;
+}
+
+body main section.guess-my-number .controls {
+  background: #eee;
+  width: 100%;
+  padding: 20px 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body main section.guess-my-number .controls .btns-container {
+  width: 100%;
+  color: #eee;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body main section.guess-my-number .controls .btns-container .guess {
+  background: transparent;
+  width: 160px;
+  height: 60px;
+  padding: 5px 15px 5px 30px;
+  border: 4px solid #222;
+  outline: none;
+  font-size: 2em;
+  text-align: center;
+  display: block;
+}
+
+body main section.guess-my-number .controls .btns-container button {
+  background: #222;
+  width: 120px;
+  height: 60px;
+  border: none;
+  color: inherit;
+  font-size: 0.9em;
+  cursor: pointer;
+}
+
+body main section.guess-my-number .controls .btns-container button:hover {
+  background: #444;
+}
+
+body .guess-my-number.invalid {
+  border: 4px solid crimson;
+  -webkit-animation: shake 250ms;
+          animation: shake 250ms;
+}
+
+body .guess-my-number.invalid .controls,
+body .guess-my-number.invalid .tittle {
+  background: crimson;
+}
+
+body .guess-my-number.invalid #again,
+body .guess-my-number.invalid #check {
+  color: crimson;
+}
+
+body .guess-my-number.invalid .number,
+body .guess-my-number.invalid .message,
+body .guess-my-number.invalid .scores-container p {
+  color: crimson;
+  -webkit-animation: shake 250ms;
+          animation: shake 250ms;
+}
+
+@-webkit-keyframes shake {
+  25% {
+    -webkit-transform: translateX(6px);
+            transform: translateX(6px);
+  }
+  50% {
+    -webkit-transform: translateX(-6px);
+            transform: translateX(-6px);
+  }
+  75% {
+    -webkit-transform: translateX(6px);
+            transform: translateX(6px);
+  }
+  100% {
+    -webkit-transform: translateX(-6px);
+            transform: translateX(-6px);
+  }
+}
+
+@keyframes shake {
+  25% {
+    -webkit-transform: translateX(6px);
+            transform: translateX(6px);
+  }
+  50% {
+    -webkit-transform: translateX(-6px);
+            transform: translateX(-6px);
+  }
+  75% {
+    -webkit-transform: translateX(6px);
+            transform: translateX(6px);
+  }
+  100% {
+    -webkit-transform: translateX(-6px);
+            transform: translateX(-6px);
+  }
+}
+
+body .guess-my-number.winner,
+body .guess-my-number.winner #guess {
+  background: #eee;
+  color: #5bbe19;
+  border: 4px solid #5bbe19;
+  -webkit-transition: 0.8s ease-in-out;
+  transition: 0.8s ease-in-out;
+}
+
+body .guess-my-number.winner .controls,
+body .guess-my-number.winner .tittle {
+  background: #5bbe19;
+  color: #eee;
+  -webkit-transition: 0.8s ease-in-out;
+  transition: 0.8s ease-in-out;
+}
+
+body .guess-my-number.winner .number,
+body .guess-my-number.winner .message,
+body .guess-my-number.winner .scores-container p,
+body .guess-my-number.winner #again,
+body .guess-my-number.winner #check {
+  color: #5bbe19;
+  -webkit-transition: 0.8s ease-in-out;
+  transition: 0.8s ease-in-out;
+}
+
+body .guess-my-number.winner #again,
+body .guess-my-number.winner #check {
+  background: #eee;
+}
+
+body .guess-my-number.winner .number {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+  -webkit-transition: 0.8s ease-in-out;
+  transition: 0.8s ease-in-out;
+}
+/*# sourceMappingURL=guess-my-num.css.map */

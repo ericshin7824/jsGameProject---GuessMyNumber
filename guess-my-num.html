@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="guess-my-num.css" />
+        <title>Guess My Number!</title>
+    </head>
+    <body>
+        <header class="nav-wrapper">
+            <div class="nav max-width">
+                <a class="logo" href="">
+                    <h1>hoon.</h1>
+                </a>
+            </div>
+        </header>
+        <main>
+            <section class="guess-my-number" id="guess-my-number">
+                <div class="tittle">
+                    <span>Javascript Project</span>
+                    <h1>Guess My Number</h1>
+                </div>
+
+                <div class="screen">
+                    <div class="scores-container">
+                        <div class="left">
+                            <p class="label-highscore">Highscore: <span class="highscore" id="highscore">0</span></p>
+                            <p class="label-score">Score: <span class="score" id="score">10</span></p>
+                        </div>
+                        <p class="between">Between 1 and 10</p>
+                    </div>
+                    <div class="number-wrapper">
+                        <div class="number" id="number">?</div>
+                    </div>
+                    <p class="message" id="message">Start guessing...</p>
+                </div>
+
+                <div class="controls">
+                    <div class="btns-container">
+                        <button class="btn again" id="again">Again</button>
+                        <input type="number" class="guess" id="guess" />
+                        <button class="btn check" id="check">Check</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <script src="guess-my-num.js"></script>
+    </body>
+</html>
