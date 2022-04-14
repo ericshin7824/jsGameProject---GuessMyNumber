@@ -8,7 +8,7 @@ const screenGuess = document.querySelector("#guess");
 const screenMessage = document.querySelector("#message");
 
 let secretNumber = Math.trunc(Math.random() * 10) + 1;
-let score = 10;
+let score = 5;
 let highScore = 0;
 
 const displayMessage = function (message) {
@@ -60,7 +60,7 @@ document.querySelector(".again").addEventListener("click", function () {
     score = 10;
     secretNumber = Math.trunc(Math.random() * 10) + 1;
 
-    displayMessage("Start guessing...");
+    displayMessage("Start guessing..");
 
     guessMyNumber.classList.remove("winner");
 

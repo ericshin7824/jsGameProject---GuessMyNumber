@@ -64,34 +64,39 @@ body main {
 
 body main section.guess-my-number {
   position: relative;
-  background: #222;
-  width: 620px;
-  margin: 0 auto;
-  padding: 20px;
-  border: 4px solid #eee;
-  -webkit-box-shadow: 0 20px 50px 5px rgba(0, 0, 0, 0.4);
-          box-shadow: 0 20px 50px 5px rgba(0, 0, 0, 0.4);
+  background: -webkit-gradient(linear, left top, right top, from(rgba(40, 40, 40, 0.4)), color-stop(rgba(40, 40, 40, 0.8)), to(rgba(40, 40, 40, 0.4)));
+  background: linear-gradient(90deg, rgba(40, 40, 40, 0.4), rgba(40, 40, 40, 0.8), rgba(40, 40, 40, 0.4));
+  width: 540px;
+  padding: 10px;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 -1px 0 0 white, -2px 0 0 1px white, 2px 0 0 1px white, 0 2px 2px 2px rgba(215, 215, 215, 0.6), 0 2px 0 4px rgba(255, 255, 255, 0.9), 0 10px 0 2px rgba(120, 120, 120, 0.6), 0 10px 10px 2px black, 0 14px 30px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 -1px 0 0 white, -2px 0 0 1px white, 2px 0 0 1px white, 0 2px 2px 2px rgba(215, 215, 215, 0.6), 0 2px 0 4px rgba(255, 255, 255, 0.9), 0 10px 0 2px rgba(120, 120, 120, 0.6), 0 10px 10px 2px black, 0 14px 30px 10px rgba(0, 0, 0, 0.2);
 }
 
 body main section.guess-my-number .tittle {
   position: relative;
-  background: #eee;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 181, 20, 0.9)), to(rgba(255, 181, 20, 0.6)));
+  background: linear-gradient(180deg, rgba(255, 181, 20, 0.9), rgba(255, 181, 20, 0.6));
   width: 100%;
-  padding: 20px 60px;
+  padding: 8px 24px 16px;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 2px 1px #ffb514, inset 0 -2px 4px 0 rgba(255, 181, 20, 0.6), inset 0 0 4px 4px rgba(0, 0, 0, 0.2), 0 3px 3px 0 rgba(120, 80, 10, 0.8), 0 5px 0 0 #78500a, 0 10px 10px 2px rgba(0, 0, 0, 0.4), 0 10px 30px 4px rgba(0, 0, 0, 0.2);
+          box-shadow: inset 0 1px 2px 1px #ffb514, inset 0 -2px 4px 0 rgba(255, 181, 20, 0.6), inset 0 0 4px 4px rgba(0, 0, 0, 0.2), 0 3px 3px 0 rgba(120, 80, 10, 0.8), 0 5px 0 0 #78500a, 0 10px 10px 2px rgba(0, 0, 0, 0.4), 0 10px 30px 4px rgba(0, 0, 0, 0.2);
   color: #222;
+  text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.2), 1px 1px 1px rgba(240, 240, 240, 0.6);
   text-align: center;
   white-space: nowrap;
 }
 
 body main section.guess-my-number .tittle h1 {
-  margin-top: 15px;
+  margin-top: 10px;
   text-transform: uppercase;
-  font-size: 1.7em;
+  font-size: 1.5em;
   letter-spacing: 2px;
 }
 
 body main section.guess-my-number .tittle span {
-  font-size: 0.7em;
+  font-size: 0.5em;
   letter-spacing: 1px;
 }
 
@@ -99,13 +104,13 @@ body main section.guess-my-number .screen {
   position: relative;
   background: transparent;
   width: 100%;
-  padding: 30px 20px 80px;
+  padding: 24px 36px 36px;
   color: #eee;
 }
 
 body main section.guess-my-number .screen .scores-container {
-  color: #eee;
-  font-size: 0.7em;
+  font-size: 0.4em;
+  text-shadow: 0px 6px 2px rgba(0, 0, 0, 0.6);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -120,8 +125,8 @@ body main section.guess-my-number .screen .scores-container .left p:first-child 
 
 body main section.guess-my-number .screen .number-wrapper {
   width: 100%;
-  height: 200px;
-  margin: 40px 0 0;
+  height: 180px;
+  margin: 24px 0;
   text-align: center;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -135,7 +140,8 @@ body main section.guess-my-number .screen .number-wrapper {
 }
 
 body main section.guess-my-number .screen .number-wrapper .number {
-  font-size: 5em;
+  font-size: 4em;
+  text-shadow: 0 8px 2px rgba(0, 0, 0, 0.6);
 }
 
 body main section.guess-my-number .screen .message {
@@ -143,12 +149,17 @@ body main section.guess-my-number .screen .message {
   text-align: center;
   font-size: 1.2em;
   white-space: nowrap;
+  text-shadow: 0 6px 2px rgba(0, 0, 0, 0.6);
 }
 
 body main section.guess-my-number .controls {
-  background: #eee;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 181, 20, 0.9)), to(rgba(255, 181, 20, 0.6)));
+  background: linear-gradient(180deg, rgba(255, 181, 20, 0.9), rgba(255, 181, 20, 0.6));
   width: 100%;
-  padding: 20px 60px;
+  padding: 12px 24px;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 2px 1px #ffb514, inset 0 -2px 4px 0 rgba(255, 181, 20, 0.6), inset 0 0 4px 4px rgba(0, 0, 0, 0.2), 0 3px 3px 0 rgba(120, 80, 10, 0.8), 0 5px 0 0 #78500a, 0 10px 10px 2px rgba(0, 0, 0, 0.4), 0 10px 30px 4px rgba(0, 0, 0, 0.2);
+          box-shadow: inset 0 1px 2px 1px #ffb514, inset 0 -2px 4px 0 rgba(255, 181, 20, 0.6), inset 0 0 4px 4px rgba(0, 0, 0, 0.2), 0 3px 3px 0 rgba(120, 80, 10, 0.8), 0 5px 0 0 #78500a, 0 10px 10px 2px rgba(0, 0, 0, 0.4), 0 10px 30px 4px rgba(0, 0, 0, 0.2);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -166,7 +177,6 @@ body main section.guess-my-number .controls {
 
 body main section.guess-my-number .controls .btns-container {
   width: 100%;
-  color: #eee;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -179,28 +189,35 @@ body main section.guess-my-number .controls .btns-container {
 }
 
 body main section.guess-my-number .controls .btns-container .guess {
-  background: transparent;
-  width: 160px;
+  background: #eee;
+  width: 140px;
   height: 60px;
   padding: 5px 15px 5px 30px;
-  border: 4px solid #222;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 3px 3px 1px rgba(0, 0, 0, 0.4), 0 1px 0 4px #222222, 0 4px 4px 0 rgba(0, 0, 0, 0.8), 0 8px 8px 0 rgba(0, 0, 0, 0.4);
+          box-shadow: inset 0 3px 3px 1px rgba(0, 0, 0, 0.4), 0 1px 0 4px #222222, 0 4px 4px 0 rgba(0, 0, 0, 0.8), 0 8px 8px 0 rgba(0, 0, 0, 0.4);
   outline: none;
+  color: #222;
   font-size: 2em;
   text-align: center;
   display: block;
 }
 
-body main section.guess-my-number .controls .btns-container button {
+body main section.guess-my-number .controls .btns-container .btn {
   background: #222;
-  width: 120px;
-  height: 60px;
+  padding: 18px 24px;
   border: none;
-  color: inherit;
-  font-size: 0.9em;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 -1px 4px 2px #505050, 0 4px 4px 0 rgba(0, 0, 0, 0.4), 0 8px 8px 0 rgba(0, 0, 0, 0.4);
+          box-shadow: inset 0 -1px 4px 2px #505050, 0 4px 4px 0 rgba(0, 0, 0, 0.4), 0 8px 8px 0 rgba(0, 0, 0, 0.4);
+  color: #eee;
+  font-size: 0.7em;
   cursor: pointer;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
-body main section.guess-my-number .controls .btns-container button:hover {
+body main section.guess-my-number .controls .btns-container .btn:hover {
   background: #444;
 }
 
@@ -210,20 +227,23 @@ body .guess-my-number.invalid {
           animation: shake 250ms;
 }
 
-body .guess-my-number.invalid .controls,
-body .guess-my-number.invalid .tittle {
+body .guess-my-number.invalid .tittle,
+body .guess-my-number.invalid .controls {
   background: crimson;
 }
 
-body .guess-my-number.invalid #again,
-body .guess-my-number.invalid #check {
+body .guess-my-number.invalid .tittle .btns-container .btn,
+body .guess-my-number.invalid .controls .btns-container .btn {
   color: crimson;
 }
 
-body .guess-my-number.invalid .number,
-body .guess-my-number.invalid .message,
-body .guess-my-number.invalid .scores-container p {
+body .guess-my-number.invalid .screen {
   color: crimson;
+}
+
+body .guess-my-number.invalid .screen .number,
+body .guess-my-number.invalid .screen .message,
+body .guess-my-number.invalid .screen .scores-container p {
   -webkit-animation: shake 250ms;
           animation: shake 250ms;
 }
@@ -266,42 +286,38 @@ body .guess-my-number.invalid .scores-container p {
   }
 }
 
-body .guess-my-number.winner,
-body .guess-my-number.winner #guess {
+body .guess-my-number.winner {
   background: #eee;
-  color: #5bbe19;
   border: 4px solid #5bbe19;
-  -webkit-transition: 0.8s ease-in-out;
-  transition: 0.8s ease-in-out;
 }
 
-body .guess-my-number.winner .controls,
-body .guess-my-number.winner .tittle {
+body .guess-my-number.winner .tittle,
+body .guess-my-number.winner .controls {
   background: #5bbe19;
+}
+
+body .guess-my-number.winner .tittle {
   color: #eee;
-  -webkit-transition: 0.8s ease-in-out;
-  transition: 0.8s ease-in-out;
 }
 
-body .guess-my-number.winner .number,
-body .guess-my-number.winner .message,
-body .guess-my-number.winner .scores-container p,
-body .guess-my-number.winner #again,
-body .guess-my-number.winner #check {
+body .guess-my-number.winner .screen {
   color: #5bbe19;
-  -webkit-transition: 0.8s ease-in-out;
-  transition: 0.8s ease-in-out;
 }
 
-body .guess-my-number.winner #again,
-body .guess-my-number.winner #check {
-  background: #eee;
-}
-
-body .guess-my-number.winner .number {
+body .guess-my-number.winner .screen .number-wrapper .number {
   -webkit-transform: scale(1.5);
           transform: scale(1.5);
-  -webkit-transition: 0.8s ease-in-out;
-  transition: 0.8s ease-in-out;
+  -webkit-transition: 0.8s ease-in;
+  transition: 0.8s ease-in;
+}
+
+body .guess-my-number.winner .controls .btns-container .guess {
+  border: 2px solid transparent;
+}
+
+body .guess-my-number.winner .controls .btns-container .guess,
+body .guess-my-number.winner .controls .btns-container .btn {
+  color: #5bbe19;
+  background: #eee;
 }
 /*# sourceMappingURL=guess-my-num.css.map */
