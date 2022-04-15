@@ -64,19 +64,21 @@ body main {
 
 body main section.guess-my-number {
   position: relative;
-  background: -webkit-gradient(linear, left top, right top, from(rgba(40, 40, 40, 0.4)), color-stop(rgba(40, 40, 40, 0.8)), to(rgba(40, 40, 40, 0.4)));
-  background: linear-gradient(90deg, rgba(40, 40, 40, 0.4), rgba(40, 40, 40, 0.8), rgba(40, 40, 40, 0.4));
+  background: -webkit-gradient(linear, left top, left bottom, from(#282828), to(#323232));
+  background: linear-gradient(180deg, #282828, #323232);
   width: 540px;
   padding: 10px;
-  border-radius: 4px;
-  -webkit-box-shadow: 0 -1px 0 0 white, -2px 0 0 1px white, 2px 0 0 1px white, 0 2px 2px 2px rgba(215, 215, 215, 0.6), 0 2px 0 4px rgba(255, 255, 255, 0.9), 0 10px 0 2px rgba(120, 120, 120, 0.6), 0 10px 10px 2px black, 0 14px 30px 10px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 -1px 0 0 white, -2px 0 0 1px white, 2px 0 0 1px white, 0 2px 2px 2px rgba(215, 215, 215, 0.6), 0 2px 0 4px rgba(255, 255, 255, 0.9), 0 10px 0 2px rgba(120, 120, 120, 0.6), 0 10px 10px 2px black, 0 14px 30px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  -webkit-box-shadow: 0 -2px 0 0 white, -3px 0 0 1px white, 3px 0 0 1px white, 0 2px 2px 2px rgba(215, 215, 215, 0.6), 0 3px 0 4px white, 0 10px 2px 2px rgba(120, 120, 120, 0.6), 0 11px 0 4px rgba(215, 215, 215, 0.7), 0 30px 5px 0 rgba(0, 0, 0, 0.4), 0 40px 10px 0 rgba(80, 80, 80, 0.2), 0 40px 20px 20px rgba(80, 80, 80, 0.2);
+          box-shadow: 0 -2px 0 0 white, -3px 0 0 1px white, 3px 0 0 1px white, 0 2px 2px 2px rgba(215, 215, 215, 0.6), 0 3px 0 4px white, 0 10px 2px 2px rgba(120, 120, 120, 0.6), 0 11px 0 4px rgba(215, 215, 215, 0.7), 0 30px 5px 0 rgba(0, 0, 0, 0.4), 0 40px 10px 0 rgba(80, 80, 80, 0.2), 0 40px 20px 20px rgba(80, 80, 80, 0.2);
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
 }
 
 body main section.guess-my-number .tittle {
   position: relative;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 181, 20, 0.9)), to(rgba(255, 181, 20, 0.6)));
-  background: linear-gradient(180deg, rgba(255, 181, 20, 0.9), rgba(255, 181, 20, 0.6));
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffb514), to(rgba(255, 181, 20, 0.9)));
+  background: linear-gradient(180deg, #ffb514, rgba(255, 181, 20, 0.9));
   width: 100%;
   padding: 8px 24px 16px;
   border-radius: 4px;
@@ -104,7 +106,7 @@ body main section.guess-my-number .screen {
   position: relative;
   background: transparent;
   width: 100%;
-  padding: 24px 36px 36px;
+  padding: 24px 36px;
   color: #eee;
 }
 
@@ -117,10 +119,17 @@ body main section.guess-my-number .screen .scores-container {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+  opacity: 0.1;
 }
 
 body main section.guess-my-number .screen .scores-container .left p:first-child {
   margin-bottom: 15px;
+}
+
+body main section.guess-my-number .screen .scores-container .between {
+  opacity: 0;
 }
 
 body main section.guess-my-number .screen .number-wrapper {
@@ -142,20 +151,57 @@ body main section.guess-my-number .screen .number-wrapper {
 body main section.guess-my-number .screen .number-wrapper .number {
   font-size: 4em;
   text-shadow: 0 8px 2px rgba(0, 0, 0, 0.6);
+  white-space: nowrap;
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+  opacity: 0.1;
+}
+
+body main section.guess-my-number .screen .number-wrapper .number .press-start span {
+  font-size: 0.5em;
+  display: block;
+}
+
+body main section.guess-my-number .screen .number-wrapper .number .press-start span:not(:last-child) {
+  margin-bottom: 6px;
 }
 
 body main section.guess-my-number .screen .message {
   width: 100%;
+  height: 48px;
   text-align: center;
   font-size: 1.2em;
   white-space: nowrap;
   text-shadow: 0 6px 2px rgba(0, 0, 0, 0.6);
+  text-align: center;
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+  opacity: 0.1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body main section.guess-my-number .screen .message .rules span {
+  font-size: 0.6em;
+  display: block;
+}
+
+body main section.guess-my-number .screen .message .rules span:not(:last-child) {
+  margin-bottom: 4px;
 }
 
 body main section.guess-my-number .controls {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 181, 20, 0.9)), to(rgba(255, 181, 20, 0.6)));
-  background: linear-gradient(180deg, rgba(255, 181, 20, 0.9), rgba(255, 181, 20, 0.6));
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffb514), to(rgba(255, 181, 20, 0.9)));
+  background: linear-gradient(180deg, #ffb514, rgba(255, 181, 20, 0.9));
   width: 100%;
+  height: 100px;
   padding: 12px 24px;
   border-radius: 4px;
   -webkit-box-shadow: inset 0 1px 2px 1px #ffb514, inset 0 -2px 4px 0 rgba(255, 181, 20, 0.6), inset 0 0 4px 4px rgba(0, 0, 0, 0.2), 0 3px 3px 0 rgba(120, 80, 10, 0.8), 0 5px 0 0 #78500a, 0 10px 10px 2px rgba(0, 0, 0, 0.4), 0 10px 30px 4px rgba(0, 0, 0, 0.2);
@@ -169,81 +215,147 @@ body main section.guess-my-number .controls {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-column-gap: 32px;
+          column-gap: 32px;
+}
+
+body main section.guess-my-number .controls .middle-btn-box {
+  width: 80px;
+  height: 60px;
+  margin-bottom: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  row-gap: 6px;
 }
 
-body main section.guess-my-number .controls .btns-container {
+body main section.guess-my-number .controls .middle-btn-box .start,
+body main section.guess-my-number .controls .middle-btn-box .reset {
+  background: -webkit-gradient(linear, left top, left bottom, from(#282828), to(#323232));
+  background: linear-gradient(180deg, #282828, #323232);
   width: 100%;
+  height: 50%;
+  border: none;
+  border-radius: 6px;
+  -webkit-box-shadow: inset 0 0 0 2px #333333, 0 1px 0 1px rgba(100, 100, 100, 0.9), 0 4px 2px 0 rgba(0, 0, 0, 0.9), 0 4px 6px 2px rgba(0, 0, 0, 0.4);
+          box-shadow: inset 0 0 0 2px #333333, 0 1px 0 1px rgba(100, 100, 100, 0.9), 0 4px 2px 0 rgba(0, 0, 0, 0.9), 0 4px 6px 2px rgba(0, 0, 0, 0.4);
+  color: #eee;
+  font-size: 0.6em;
+  text-transform: uppercase;
+}
+
+body main section.guess-my-number .controls .check,
+body main section.guess-my-number .controls .start,
+body main section.guess-my-number .controls .reset {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-body main section.guess-my-number .controls .btns-container .guess {
-  background: #eee;
-  width: 140px;
-  height: 60px;
-  padding: 5px 15px 5px 30px;
-  border-radius: 4px;
-  -webkit-box-shadow: inset 0 3px 3px 1px rgba(0, 0, 0, 0.4), 0 1px 0 4px #222222, 0 4px 4px 0 rgba(0, 0, 0, 0.8), 0 8px 8px 0 rgba(0, 0, 0, 0.4);
-          box-shadow: inset 0 3px 3px 1px rgba(0, 0, 0, 0.4), 0 1px 0 4px #222222, 0 4px 4px 0 rgba(0, 0, 0, 0.8), 0 8px 8px 0 rgba(0, 0, 0, 0.4);
-  outline: none;
-  color: #222;
-  font-size: 2em;
-  text-align: center;
-  display: block;
-}
-
-body main section.guess-my-number .controls .btns-container .btn {
-  background: #222;
-  padding: 18px 24px;
-  border: none;
-  border-radius: 4px;
-  -webkit-box-shadow: inset 0 -1px 4px 2px #505050, 0 4px 4px 0 rgba(0, 0, 0, 0.4), 0 8px 8px 0 rgba(0, 0, 0, 0.4);
-          box-shadow: inset 0 -1px 4px 2px #505050, 0 4px 4px 0 rgba(0, 0, 0, 0.4), 0 8px 8px 0 rgba(0, 0, 0, 0.4);
-  color: #eee;
-  font-size: 0.7em;
-  cursor: pointer;
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
+  cursor: pointer;
 }
 
-body main section.guess-my-number .controls .btns-container .btn:hover {
-  background: #444;
+body main section.guess-my-number .controls .check:hover,
+body main section.guess-my-number .controls .start:hover,
+body main section.guess-my-number .controls .reset:hover {
+  background: #5bbe19;
 }
 
-body .guess-my-number.invalid {
+body main section.guess-my-number .controls .check,
+body main section.guess-my-number .controls .guess {
+  background: #eee;
+  width: 120px;
+  height: 48px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 6px;
+  -webkit-box-shadow: inset 0 0 0 3px #333333, 0 1px 0 1px rgba(100, 100, 100, 0.9), 0 4px 2px 0 rgba(0, 0, 0, 0.9), 0 4px 6px 2px rgba(0, 0, 0, 0.4);
+          box-shadow: inset 0 0 0 3px #333333, 0 1px 0 1px rgba(100, 100, 100, 0.9), 0 4px 2px 0 rgba(0, 0, 0, 0.9), 0 4px 6px 2px rgba(0, 0, 0, 0.4);
+  color: #222;
+  font-size: 1em;
+  text-transform: uppercase;
+}
+
+body main section.guess-my-number .controls .guess {
+  padding: 5px 15px 5px 30px;
+  outline: none;
+  font-size: 1em;
+  text-align: center;
+}
+
+body main section.guess-my-number .controls .guess::-webkit-input-placeholder {
+  color: #222;
+}
+
+body main section.guess-my-number .controls .guess:-ms-input-placeholder {
+  color: #222;
+}
+
+body main section.guess-my-number .controls .guess::-ms-input-placeholder {
+  color: #222;
+}
+
+body main section.guess-my-number .controls .guess::placeholder {
+  color: #222;
+}
+
+body main section.guess-my-number .controls .guess::-webkit-inner-spin-button,
+body main section.guess-my-number .controls .guess::-webkit-outer-spin-button {
+  opacity: 1;
+}
+
+body main .guess-my-number.active .screen .number-wrapper .number {
+  font-size: 4em;
+  opacity: 1;
+}
+
+body main .guess-my-number.active .screen .number,
+body main .guess-my-number.active .screen .message,
+body main .guess-my-number.active .screen .scores-container {
+  opacity: 1;
+}
+
+body main .guess-my-number.active .screen .number .between,
+body main .guess-my-number.active .screen .message .between,
+body main .guess-my-number.active .screen .scores-container .between {
+  opacity: 1;
+}
+
+body main .guess-my-number.active .screen .controls .check,
+body main .guess-my-number.active .screen .controls .reset,
+body main .guess-my-number.active .screen .controls .start {
+  background: crimson;
+}
+
+body main .guess-my-number.invalid {
   border: 4px solid crimson;
   -webkit-animation: shake 250ms;
           animation: shake 250ms;
 }
 
-body .guess-my-number.invalid .tittle,
-body .guess-my-number.invalid .controls {
-  background: crimson;
-}
-
-body .guess-my-number.invalid .tittle .btns-container .btn,
-body .guess-my-number.invalid .controls .btns-container .btn {
+body main .guess-my-number.invalid .screen {
   color: crimson;
 }
 
-body .guess-my-number.invalid .screen {
-  color: crimson;
-}
-
-body .guess-my-number.invalid .screen .number,
-body .guess-my-number.invalid .screen .message,
-body .guess-my-number.invalid .screen .scores-container p {
+body main .guess-my-number.invalid .screen .number,
+body main .guess-my-number.invalid .screen .message,
+body main .guess-my-number.invalid .screen .scores-container p {
   -webkit-animation: shake 250ms;
           animation: shake 250ms;
 }
@@ -286,38 +398,63 @@ body .guess-my-number.invalid .screen .scores-container p {
   }
 }
 
-body .guess-my-number.winner {
-  background: #eee;
-  border: 4px solid #5bbe19;
-}
-
-body .guess-my-number.winner .tittle,
-body .guess-my-number.winner .controls {
+body main .guess-my-number.winner {
   background: #5bbe19;
 }
 
-body .guess-my-number.winner .tittle {
+body main .guess-my-number.winner .tittle {
+  opacity: 0.1;
+}
+
+body main .guess-my-number.winner .screen {
   color: #eee;
 }
 
-body .guess-my-number.winner .screen {
-  color: #5bbe19;
+body main .guess-my-number.winner .screen .scores-container {
+  opacity: 0.1;
 }
 
-body .guess-my-number.winner .screen .number-wrapper .number {
-  -webkit-transform: scale(1.5);
-          transform: scale(1.5);
-  -webkit-transition: 0.8s ease-in;
-  transition: 0.8s ease-in;
+body main .guess-my-number.winner .screen .number-wrapper .number {
+  -webkit-transform: scale(2);
+          transform: scale(2);
 }
 
-body .guess-my-number.winner .controls .btns-container .guess {
-  border: 2px solid transparent;
+body main .guess-my-number.winner .screen .message {
+  -webkit-transform: scale(1.4);
+          transform: scale(1.4);
 }
 
-body .guess-my-number.winner .controls .btns-container .guess,
-body .guess-my-number.winner .controls .btns-container .btn {
-  color: #5bbe19;
-  background: #eee;
+body main .guess-my-number.winner .controls {
+  opacity: 0.1;
+}
+
+body main .guess-my-number.loser {
+  background: crimson;
+}
+
+body main .guess-my-number.loser .tittle {
+  opacity: 0.1;
+}
+
+body main .guess-my-number.loser .screen {
+  color: #eee;
+}
+
+body main .guess-my-number.loser .screen .scores-container {
+  opacity: 0.1;
+}
+
+body main .guess-my-number.loser .screen .number-wrapper .number {
+  -webkit-transform: scale(2);
+          transform: scale(2);
+}
+
+body main .guess-my-number.loser .screen .message {
+  -webkit-transform: scale(1.4);
+          transform: scale(1.4);
+}
+
+body main .guess-my-number.loser .controls {
+  opacity: 0.1;
 }
 /*# sourceMappingURL=guess-my-num.css.map */

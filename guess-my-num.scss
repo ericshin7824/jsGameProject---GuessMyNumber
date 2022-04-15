@@ -3,7 +3,7 @@
 
 $text-color-dark: #222;
 $text-color-light: #eee;
-$yellow-color: linear-gradient(180deg, rgba(255, 181, 20, 0.9), rgba(255, 181, 20, 0.6));
+$yellow-color: linear-gradient(180deg, rgba(255, 181, 20, 1), rgba(255, 181, 20, 0.9));
 $invalid-color: crimson;
 $winner-color: #5bbe19;
 
@@ -61,14 +61,17 @@ body {
         section.guess-my-number {
             position: relative;
 
-            background: linear-gradient(90deg, rgba(40, 40, 40, 0.4), rgba(40, 40, 40, 0.8), rgba(40, 40, 40, 0.4));
+            background: linear-gradient(180deg, rgba(40, 40, 40, 1), rgba(50, 50, 50, 1));
             width: 540px;
             padding: 10px;
-            border-radius: 4px;
-            box-shadow: 0 -1px 0 0 rgba(255, 255, 255, 1), -2px 0 0 1px rgba(255, 255, 255, 1),
-                2px 0 0 1px rgba(255, 255, 255, 1), 0 2px 2px 2px rgba(215, 215, 215, 0.6),
-                0 2px 0 4px rgba(255, 255, 255, 0.9), 0 10px 0 2px rgba(120, 120, 120, 0.6),
-                0 10px 10px 2px rgba(0, 0, 0, 1), 0 14px 30px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 6px;
+            box-shadow: 0 -2px 0 0 rgba(255, 255, 255, 1), -3px 0 0 1px rgba(255, 255, 255, 1),
+                3px 0 0 1px rgba(255, 255, 255, 1), 0 2px 2px 2px rgba(215, 215, 215, 0.6),
+                0 3px 0 4px rgba(255, 255, 255, 1), 0 10px 2px 2px rgba(120, 120, 120, 0.6),
+                0 11px 0 4px rgba(215, 215, 215, 0.7), 0 30px 5px 0 rgba(0, 0, 0, 0.4),
+                0 40px 10px 0 rgba(80, 80, 80, 0.2), 0 40px 20px 20px rgba(80, 80, 80, 0.2);
+
+            transition: 0.4s ease-in-out;
 
             .tittle {
                 position: relative;
@@ -104,7 +107,7 @@ body {
                 position: relative;
                 background: transparent;
                 width: 100%;
-                padding: 24px 36px 36px;
+                padding: 24px 36px;
                 color: $text-color-light;
 
                 .scores-container {
@@ -113,11 +116,16 @@ body {
 
                     display: flex;
                     justify-content: space-between;
+                    transition: 0.4s ease-in-out;
+                    opacity: 0.1;
 
                     .left {
                         p:first-child {
                             margin-bottom: 15px;
                         }
+                    }
+                    .between {
+                        opacity: 0;
                     }
                 }
                 .number-wrapper {
@@ -134,21 +142,56 @@ body {
                     .number {
                         font-size: 4em;
                         text-shadow: 0 8px 2px rgba(0, 0, 0, 0.6);
+                        white-space: nowrap;
+
+                        transition: 0.4s ease-in-out;
+                        opacity: 0.1;
+
+                        .press-start {
+                            span {
+                                font-size: 0.5em;
+                                display: block;
+                            }
+                            span:not(:last-child) {
+                                margin-bottom: 6px;
+                            }
+                        }
                     }
                 }
 
                 .message {
                     width: 100%;
+                    height: 48px;
+
                     text-align: center;
                     font-size: 1.2em;
                     white-space: nowrap;
                     text-shadow: 0 6px 2px rgba(0, 0, 0, 0.6);
+                    text-align: center;
+
+                    transition: 0.4s ease-in-out;
+                    opacity: 0.1;
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    .rules {
+                        span {
+                            font-size: 0.6em;
+                            display: block;
+                        }
+                        span:not(:last-child) {
+                            margin-bottom: 4px;
+                        }
+                    }
                 }
             }
 
             .controls {
                 background: $yellow-color;
                 width: 100%;
+                height: 100px;
                 padding: 12px 24px;
                 border-radius: 4px;
                 box-shadow: inset 0 1px 2px 1px rgba(255, 181, 20, 1), inset 0 -2px 4px 0 rgba(255, 181, 20, 0.6),
@@ -159,123 +202,178 @@ body {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                flex-direction: column;
+                column-gap: 32px;
 
-                .btns-container {
-                    width: 100%;
+                .middle-btn-box {
+                    width: 80px;
+                    height: 60px;
+                    margin-bottom: 10px;
 
                     display: flex;
-                    justify-content: space-between;
+                    justify-content: center;
                     align-items: center;
+                    flex-direction: column;
+                    row-gap: 6px;
 
-                    .guess {
-                        background: $text-color-light;
-                        width: 140px;
-                        height: 60px;
-                        padding: 5px 15px 5px 30px;
-                        border-radius: 4px;
-                        box-shadow: inset 0 3px 3px 1px rgba(0, 0, 0, 0.4), 0 1px 0 4px rgba(34, 34, 34, 1),
-                            0 4px 4px 0 rgba(0, 0, 0, 0.8), 0 8px 8px 0 rgba(0, 0, 0, 0.4);
-                        outline: none;
-
-                        color: $text-color-dark;
-                        font-size: 2em;
-                        text-align: center;
-
-                        display: block;
-                    }
-
-                    .btn {
-                        background: $text-color-dark;
-                        padding: 18px 24px;
-
+                    .start,
+                    .reset {
+                        background: linear-gradient(180deg, rgba(40, 40, 40, 1), rgba(50, 50, 50, 1));
+                        width: 100%;
+                        height: 50%;
                         border: none;
-                        border-radius: 4px;
-                        box-shadow: inset 0 -1px 4px 2px rgba(80, 80, 80, 1), 0 4px 4px 0 rgba(0, 0, 0, 0.4),
-                            0 8px 8px 0 rgba(0, 0, 0, 0.4);
+                        border-radius: 6px;
+                        box-shadow: inset 0 0 0 2px rgba(51, 51, 51, 1), 0 1px 0 1px rgba(100, 100, 100, 0.9),
+                            0 4px 2px 0 rgba(0, 0, 0, 0.9), 0 4px 6px 2px rgba(0, 0, 0, 0.4);
 
                         color: $text-color-light;
-                        font-size: 0.7em;
-                        cursor: pointer;
-
-                        transition: 0.3s ease-in-out;
-                    }
-
-                    .btn:hover {
-                        background: #444;
+                        font-size: 0.6em;
+                        text-transform: uppercase;
                     }
                 }
-            }
-        }
-    }
-
-    .guess-my-number.invalid {
-        border: 4px solid $invalid-color;
-        animation: shake 250ms;
-        .tittle,
-        .controls {
-            background: $invalid-color;
-            .btns-container {
-                .btn {
-                    color: $invalid-color;
+                .check,
+                .start,
+                .reset {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    transition: 0.3s ease-in-out;
+                    cursor: pointer;
                 }
-            }
-        }
-        .screen {
-            color: $invalid-color;
-            .number,
-            .message,
-            .scores-container p {
-                animation: shake 250ms;
-            }
-        }
-    }
-
-    @keyframes shake {
-        25% {
-            transform: translateX(6px);
-        }
-        50% {
-            transform: translateX(-6px);
-        }
-        75% {
-            transform: translateX(6px);
-        }
-        100% {
-            transform: translateX(-6px);
-        }
-    }
-
-    .guess-my-number.winner {
-        background: $text-color-light;
-        border: 4px solid $winner-color;
-
-        .tittle,
-        .controls {
-            background: $winner-color;
-        }
-        .tittle {
-            color: $text-color-light;
-        }
-        .screen {
-            color: $winner-color;
-            .number-wrapper {
-                .number {
-                    transform: scale(1.5);
-                    transition: 0.8s ease-in;
+                .check:hover,
+                .start:hover,
+                .reset:hover {
+                    background: $winner-color;
                 }
-            }
-        }
-        .controls {
-            .btns-container {
+
+                .check,
                 .guess {
-                    border: 2px solid transparent;
-                }
-                .guess,
-                .btn {
-                    color: $winner-color;
                     background: $text-color-light;
+                    width: 120px;
+                    height: 48px;
+                    margin-bottom: 10px;
+                    border: none;
+                    border-radius: 6px;
+                    box-shadow: inset 0 0 0 3px rgba(51, 51, 51, 1), 0 1px 0 1px rgba(100, 100, 100, 0.9),
+                        0 4px 2px 0 rgba(0, 0, 0, 0.9), 0 4px 6px 2px rgba(0, 0, 0, 0.4);
+
+                    color: $text-color-dark;
+                    font-size: 1em;
+                    text-transform: uppercase;
                 }
+                .guess {
+                    padding: 5px 15px 5px 30px;
+                    outline: none;
+
+                    font-size: 1em;
+                    text-align: center;
+                }
+                .guess::placeholder {
+                    color: $text-color-dark;
+                }
+                .guess::-webkit-inner-spin-button,
+                .guess::-webkit-outer-spin-button {
+                    opacity: 1;
+                }
+            }
+        }
+        .guess-my-number.active {
+            .screen {
+                .number-wrapper {
+                    .number {
+                        font-size: 4em;
+                        opacity: 1;
+                    }
+                }
+                .number,
+                .message,
+                .scores-container {
+                    opacity: 1;
+                    .between {
+                        opacity: 1;
+                    }
+                }
+                .controls {
+                    .check,
+                    .reset,
+                    .start {
+                        background: $invalid-color;
+                    }
+                }
+            }
+        }
+
+        .guess-my-number.invalid {
+            border: 4px solid $invalid-color;
+            animation: shake 250ms;
+
+            .screen {
+                color: $invalid-color;
+                .number,
+                .message,
+                .scores-container p {
+                    animation: shake 250ms;
+                }
+            }
+        }
+
+        @keyframes shake {
+            25% {
+                transform: translateX(6px);
+            }
+            50% {
+                transform: translateX(-6px);
+            }
+            75% {
+                transform: translateX(6px);
+            }
+            100% {
+                transform: translateX(-6px);
+            }
+        }
+        .guess-my-number.winner {
+            background: $winner-color;
+            .tittle {
+                opacity: 0.1;
+            }
+            .screen {
+                color: $text-color-light;
+                .scores-container {
+                    opacity: 0.1;
+                }
+                .number-wrapper {
+                    .number {
+                        transform: scale(2);
+                    }
+                }
+                .message {
+                    transform: scale(1.4);
+                }
+            }
+            .controls {
+                opacity: 0.1;
+            }
+        }
+        .guess-my-number.loser {
+            background: $invalid-color;
+            .tittle {
+                opacity: 0.1;
+            }
+            .screen {
+                color: $text-color-light;
+                .scores-container {
+                    opacity: 0.1;
+                }
+                .number-wrapper {
+                    .number {
+                        transform: scale(2);
+                    }
+                }
+                .message {
+                    transform: scale(1.4);
+                }
+            }
+            .controls {
+                opacity: 0.1;
             }
         }
     }
