@@ -69,16 +69,16 @@ body main section.guess-my-number {
   width: 540px;
   padding: 10px;
   border-radius: 6px;
-  -webkit-box-shadow: 0 -2px 0 0 white, -3px 0 0 1px white, 3px 0 0 1px white, 0 2px 2px 2px rgba(215, 215, 215, 0.6), 0 3px 0 4px white, 0 10px 2px 2px rgba(120, 120, 120, 0.6), 0 11px 0 4px rgba(215, 215, 215, 0.7), 0 30px 5px 0 rgba(0, 0, 0, 0.4), 0 40px 10px 0 rgba(80, 80, 80, 0.2), 0 40px 20px 20px rgba(80, 80, 80, 0.2);
-          box-shadow: 0 -2px 0 0 white, -3px 0 0 1px white, 3px 0 0 1px white, 0 2px 2px 2px rgba(215, 215, 215, 0.6), 0 3px 0 4px white, 0 10px 2px 2px rgba(120, 120, 120, 0.6), 0 11px 0 4px rgba(215, 215, 215, 0.7), 0 30px 5px 0 rgba(0, 0, 0, 0.4), 0 40px 10px 0 rgba(80, 80, 80, 0.2), 0 40px 20px 20px rgba(80, 80, 80, 0.2);
+  -webkit-box-shadow: 0 -2px 0 0 white, -3px 0 0 1px white, 3px 0 0 1px white, 0 2px 2px 2px rgba(215, 215, 215, 0.6), 0 3px 0 4px white, 0 10px 2px 2px rgba(120, 120, 120, 0.6), 0 11px 0 4px rgba(215, 215, 215, 0.7), 0 30px 10px 0 rgba(0, 0, 0, 0.6), 0 50px 10px 0px rgba(0, 0, 0, 0.2), 0 50px 20px 0px rgba(160, 160, 160, 0.1);
+          box-shadow: 0 -2px 0 0 white, -3px 0 0 1px white, 3px 0 0 1px white, 0 2px 2px 2px rgba(215, 215, 215, 0.6), 0 3px 0 4px white, 0 10px 2px 2px rgba(120, 120, 120, 0.6), 0 11px 0 4px rgba(215, 215, 215, 0.7), 0 30px 10px 0 rgba(0, 0, 0, 0.6), 0 50px 10px 0px rgba(0, 0, 0, 0.2), 0 50px 20px 0px rgba(160, 160, 160, 0.1);
   -webkit-transition: 0.4s ease-in-out;
   transition: 0.4s ease-in-out;
 }
 
 body main section.guess-my-number .tittle {
   position: relative;
-  background: -webkit-gradient(linear, left top, left bottom, from(#ffb514), to(rgba(255, 181, 20, 0.9)));
-  background: linear-gradient(180deg, #ffb514, rgba(255, 181, 20, 0.9));
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffbe28), color-stop(40%, #ffc83c), to(#ffb414));
+  background: linear-gradient(180deg, #ffbe28 0%, #ffc83c 40%, #ffb414 100%);
   width: 100%;
   padding: 8px 24px 16px;
   border-radius: 4px;
@@ -198,8 +198,8 @@ body main section.guess-my-number .screen .message .rules span:not(:last-child) 
 }
 
 body main section.guess-my-number .controls {
-  background: -webkit-gradient(linear, left top, left bottom, from(#ffb514), to(rgba(255, 181, 20, 0.9)));
-  background: linear-gradient(180deg, #ffb514, rgba(255, 181, 20, 0.9));
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffbe28), color-stop(40%, #ffc83c), to(#ffb414));
+  background: linear-gradient(180deg, #ffbe28 0%, #ffc83c 40%, #ffb414 100%);
   width: 100%;
   height: 100px;
   padding: 12px 24px;
