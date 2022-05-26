@@ -1,380 +1,485 @@
-@import url("https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+:root {
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    line-height: 1.85;
+    // text-align: left;
+
+    --primary-color-dark: rgba(25, 25, 25, 1);
+    --primary-color-light: rgba(255, 255, 255, 1);
+    --primary-color-yellow: rgba(255, 194, 41, 1);
+    --primary-color-gray: rgba(160, 160, 160, 1);
+    --success-color-green: rgb(104, 241, 99);
+
+    --logo-size: 1.4rem;
+    --nav-height-l: 3.125rem;
+    --nav-height-m: 2.5rem;
+    --footer-height-l: 2.5rem;
+    --footer-height-m: 1.875rem;
+
+    --max-w-1920: 120rem;
+    --max-w-1440: 90rem;
+    --max-w-960: 60rem;
+    --max-w-540: 35rem;
+    --min-w-360: 360px;
+    --space-5: 0.3125rem;
+    --space-6: 0.375rem;
+    --space-7h: 0.46875rem;
+    --space-8: 0.5rem;
+    --space-10: 0.625rem;
+    --space-12: 0.75rem;
+    --space-15: 0.9375rem;
+    --space-20: 1.25rem;
+    --space-25: 1.5625rem;
+    --space-30: 1.875rem;
+    --space-40: 2.5rem;
+    --space-48: 3rem;
+    --space-50: 3.125rem;
+    --space-60: 3.75rem;
+    --space-70: 4.375rem;
+    --space-80: 5rem;
+    --space-90: 5.625rem;
+    --space-100: 6.25rem;
+    --space-120: 7.5rem;
+    --space-140: 8.75rem;
+    --space-150: 9.375rem;
+    --space-160: 10rem;
+    --radius-4: 4px;
+    --radius-8: 8px;
+    --default-text-align: left;
+
+    --font-weight-300: 300;
+    --font-weight-500: 500;
+    --font-weight-600: 600;
+    --font-weight-800: 800;
+
+    --font-size-10: 0.625rem;
+    --font-size-12: 0.75rem;
+    --font-size-13: 0.8125rem;
+    --font-size-14: 0.875rem;
+    --font-size-16: 1rem;
+    --font-size-18: 1.125rem;
+    --font-size-20: 1.25rem;
+    --font-size-22: 1.375rem;
+    --font-size-24: 1.5rem;
+    --font-size-26: 1.625rem;
+    --font-size-27: 1.6875rem;
+    --font-size-28: 1.75rem;
+    --font-size-32: 2rem;
+    --font-size-40: 2.5rem;
+    --font-size-42: 2.625rem;
+    --font-size-48: 3rem;
+    --font-size-54: 3.375rem;
+    --font-size-60: 3.75rem;
+    --font-size-64: 4rem;
+    --font-size-72: 4.5rem;
+    --font-size-80: 5rem;
+    --font-size-108: 6.75rem;
+    --font-size-126: 7.875rem;
+
+    --font-size-128: 8rem;
+    --font-size-144: 9rem;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+
+$primary-black: rgba(25, 25, 25, 1);
+$primary-white: rgba(248, 248, 248, 1);
 $text-color-dark: #222;
 $text-color-light: #eee;
 $yellow-color: linear-gradient(180deg, rgba(255, 190, 40, 1) 0%, rgba(255, 200, 60, 1) 40%, rgba(255, 180, 20, 1) 100%);
 $invalid-color: crimson;
 $winner-color: #5bbe19;
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
-    font-family: "Press Start 2P", sans-serif;
+    font-family: 'Press Start 2P', sans-serif;
+}
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+li,
+ul {
+    padding: 0;
+    margin: 0;
 }
 
 body {
-    .max-width {
-        max-width: 1280px;
-        margin: 0 auto;
-    }
-    .nav-wrapper {
-        background: #111111;
-        color: #fff;
+    // background: var(--primary-color-dark);
+    position: relative;
+    background-color: #333;
+    min-height: 100vh;
+    display: flex;
+    // flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+nav {
+    position: absolute;
+    top: 0;
+    // background: var(--primary-color-light);
+
+    width: 100%;
+    height: var(--nav-height-l);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .contents-container {
+        max-width: var(--max-w-1440);
         width: 100%;
-        height: 60px;
-        filter: drop-shadow(0 -5px 10px rgb(170, 170, 170));
+        padding-left: var(--space-40);
+        padding-right: var(--space-40);
 
-        position: fixed;
-        top: 0;
-        z-index: 999;
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            color: var(--primary-color-light);
+            font-size: var(--logo-size);
+            font-weight: 800;
+            cursor: pointer;
+        }
+    }
+}
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.guess-my-number {
+    position: relative;
 
-        .nav {
-            width: 100%;
-            height: 100%;
+    background: linear-gradient(180deg, rgba(40, 40, 40, 1), rgba(50, 50, 50, 1));
+    width: 540px;
+    padding: 10px;
+    border-radius: 6px;
+    box-shadow: 0 -2px 0 0 rgba(255, 255, 255, 1), -3px 0 0 1px rgba(255, 255, 255, 1),
+        3px 0 0 1px rgba(255, 255, 255, 1), 0 2px 2px 2px rgba(215, 215, 215, 0.6), 0 3px 0 4px rgba(255, 255, 255, 1),
+        0 10px 2px 2px rgba(120, 120, 120, 0.6), 0 11px 0 4px rgba(215, 215, 215, 0.7), 0 30px 10px 0 rgba(0, 0, 0, 0.6),
+        0 50px 10px 0px rgba(0, 0, 0, 0.2), 0 50px 20px 0px rgba(160, 160, 160, 0.1);
+
+    transition: 0.4s ease-in-out;
+
+    * {
+        font-family: 'Press Start 2P', sans-serif;
+    }
+
+    .tittle {
+        position: relative;
+
+        background: $yellow-color;
+        width: 100%;
+        padding: 8px 24px 16px;
+        border-radius: 4px;
+        box-shadow: inset 0 1px 2px 1px rgba(255, 181, 20, 1), inset 0 -2px 4px 0 rgba(255, 181, 20, 0.6),
+            inset 0 0 4px 4px rgba(0, 0, 0, 0.2), 0 3px 3px 0 rgba(120, 80, 10, 0.8), 0 5px 0 0 rgba(120, 80, 10, 1),
+            0 10px 10px 2px rgba(0, 0, 0, 0.4), 0 10px 30px 4px rgba(0, 0, 0, 0.2);
+
+        color: $text-color-dark;
+        text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.2), 1px 1px 1px rgba(240, 240, 240, 0.6);
+        text-align: center;
+        white-space: nowrap;
+
+        h1 {
+            margin-top: 10px;
+            text-transform: uppercase;
+            font-size: 1.5em;
+            letter-spacing: 2px;
+        }
+
+        span {
+            font-size: 0.5em;
+            letter-spacing: 1px;
+        }
+    }
+
+    .screen {
+        position: relative;
+        background: transparent;
+        width: 100%;
+        padding: 24px 36px;
+        color: $text-color-light;
+
+        .scores-container {
+            font-size: 0.4em;
+            text-shadow: 0px 6px 2px rgba(0, 0, 0, 0.6);
 
             display: flex;
-            justify-content: left;
+            justify-content: space-between;
+            transition: 0.4s ease-in-out;
+            opacity: 0.1;
+
+            .left {
+                p:first-child {
+                    margin-bottom: 15px;
+                }
+            }
+            .between {
+                opacity: 0;
+            }
+        }
+        .number-wrapper {
+            width: 100%;
+            height: 180px;
+            margin: 24px 0;
+
+            text-align: center;
+
+            display: flex;
+            justify-content: center;
             align-items: center;
 
-            .logo {
-                h1 {
-                    font-family: "Poppins", sans-serif;
-                    font-weight: 700;
-                    color: #fff;
-                    text-decoration: none;
+            .number {
+                font-size: 4em;
+                text-shadow: 0 8px 2px rgba(0, 0, 0, 0.6);
+                white-space: nowrap;
+
+                transition: 0.4s ease-in-out;
+                opacity: 0.1;
+
+                .press-start {
+                    span {
+                        font-size: 0.5em;
+                        display: block;
+                    }
+                    span:not(:last-child) {
+                        margin-bottom: 6px;
+                    }
+                }
+            }
+        }
+
+        .message {
+            width: 100%;
+            height: 48px;
+
+            text-align: center;
+            font-size: 1.2em;
+            white-space: nowrap;
+            text-shadow: 0 6px 2px rgba(0, 0, 0, 0.6);
+            text-align: center;
+
+            transition: 0.4s ease-in-out;
+            opacity: 0.1;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .rules {
+                span {
+                    font-size: 0.6em;
+                    display: block;
+                }
+                span:not(:last-child) {
+                    margin-bottom: 4px;
                 }
             }
         }
     }
-    main {
-        background: #333;
+
+    .controls {
+        background: $yellow-color;
         width: 100%;
-        height: 100vh;
+        height: 100px;
+        padding: 12px 24px;
+        border-radius: 4px;
+        box-shadow: inset 0 1px 2px 1px rgba(255, 181, 20, 1), inset 0 -2px 4px 0 rgba(255, 181, 20, 0.6),
+            inset 0 0 4px 4px rgba(0, 0, 0, 0.2), 0 3px 3px 0 rgba(120, 80, 10, 0.8), 0 5px 0 0 rgba(120, 80, 10, 1),
+            0 10px 10px 2px rgba(0, 0, 0, 0.4), 0 10px 30px 4px rgba(0, 0, 0, 0.2);
 
         display: flex;
         justify-content: center;
         align-items: center;
+        column-gap: 32px;
 
-        section.guess-my-number {
-            position: relative;
+        .middle-btn-box {
+            width: 80px;
+            height: 60px;
+            margin-bottom: 10px;
 
-            background: linear-gradient(180deg, rgba(40, 40, 40, 1), rgba(50, 50, 50, 1));
-            width: 540px;
-            padding: 10px;
-            border-radius: 6px;
-            box-shadow: 0 -2px 0 0 rgba(255, 255, 255, 1), -3px 0 0 1px rgba(255, 255, 255, 1),
-                3px 0 0 1px rgba(255, 255, 255, 1), 0 2px 2px 2px rgba(215, 215, 215, 0.6),
-                0 3px 0 4px rgba(255, 255, 255, 1), 0 10px 2px 2px rgba(120, 120, 120, 0.6),
-                0 11px 0 4px rgba(215, 215, 215, 0.7), 0 30px 10px 0 rgba(0, 0, 0, 0.6),
-                0 50px 10px 0px rgba(0, 0, 0, 0.2), 0 50px 20px 0px rgba(160, 160, 160, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            row-gap: 6px;
 
-            transition: 0.4s ease-in-out;
-
-            .tittle {
-                position: relative;
-
-                background: $yellow-color;
+            .start,
+            .reset {
+                background: linear-gradient(180deg, rgba(40, 40, 40, 1), rgba(50, 50, 50, 1));
                 width: 100%;
-                padding: 8px 24px 16px;
-                border-radius: 4px;
-                box-shadow: inset 0 1px 2px 1px rgba(255, 181, 20, 1), inset 0 -2px 4px 0 rgba(255, 181, 20, 0.6),
-                    inset 0 0 4px 4px rgba(0, 0, 0, 0.2), 0 3px 3px 0 rgba(120, 80, 10, 0.8),
-                    0 5px 0 0 rgba(120, 80, 10, 1), 0 10px 10px 2px rgba(0, 0, 0, 0.4),
-                    0 10px 30px 4px rgba(0, 0, 0, 0.2);
+                height: 50%;
+                border: none;
+                border-radius: 6px;
+                box-shadow: inset 0 0 0 2px rgba(51, 51, 51, 1), 0 1px 0 1px rgba(100, 100, 100, 0.9),
+                    0 4px 2px 0 rgba(0, 0, 0, 0.9), 0 4px 6px 2px rgba(0, 0, 0, 0.4);
 
-                color: $text-color-dark;
-                text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.2), 1px 1px 1px rgba(240, 240, 240, 0.6);
-                text-align: center;
-                white-space: nowrap;
-
-                h1 {
-                    margin-top: 10px;
-                    text-transform: uppercase;
-                    font-size: 1.5em;
-                    letter-spacing: 2px;
-                }
-
-                span {
-                    font-size: 0.5em;
-                    letter-spacing: 1px;
-                }
-            }
-
-            .screen {
-                position: relative;
-                background: transparent;
-                width: 100%;
-                padding: 24px 36px;
                 color: $text-color-light;
-
-                .scores-container {
-                    font-size: 0.4em;
-                    text-shadow: 0px 6px 2px rgba(0, 0, 0, 0.6);
-
-                    display: flex;
-                    justify-content: space-between;
-                    transition: 0.4s ease-in-out;
-                    opacity: 0.1;
-
-                    .left {
-                        p:first-child {
-                            margin-bottom: 15px;
-                        }
-                    }
-                    .between {
-                        opacity: 0;
-                    }
-                }
-                .number-wrapper {
-                    width: 100%;
-                    height: 180px;
-                    margin: 24px 0;
-
-                    text-align: center;
-
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-
-                    .number {
-                        font-size: 4em;
-                        text-shadow: 0 8px 2px rgba(0, 0, 0, 0.6);
-                        white-space: nowrap;
-
-                        transition: 0.4s ease-in-out;
-                        opacity: 0.1;
-
-                        .press-start {
-                            span {
-                                font-size: 0.5em;
-                                display: block;
-                            }
-                            span:not(:last-child) {
-                                margin-bottom: 6px;
-                            }
-                        }
-                    }
-                }
-
-                .message {
-                    width: 100%;
-                    height: 48px;
-
-                    text-align: center;
-                    font-size: 1.2em;
-                    white-space: nowrap;
-                    text-shadow: 0 6px 2px rgba(0, 0, 0, 0.6);
-                    text-align: center;
-
-                    transition: 0.4s ease-in-out;
-                    opacity: 0.1;
-
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-
-                    .rules {
-                        span {
-                            font-size: 0.6em;
-                            display: block;
-                        }
-                        span:not(:last-child) {
-                            margin-bottom: 4px;
-                        }
-                    }
-                }
-            }
-
-            .controls {
-                background: $yellow-color;
-                width: 100%;
-                height: 100px;
-                padding: 12px 24px;
-                border-radius: 4px;
-                box-shadow: inset 0 1px 2px 1px rgba(255, 181, 20, 1), inset 0 -2px 4px 0 rgba(255, 181, 20, 0.6),
-                    inset 0 0 4px 4px rgba(0, 0, 0, 0.2), 0 3px 3px 0 rgba(120, 80, 10, 0.8),
-                    0 5px 0 0 rgba(120, 80, 10, 1), 0 10px 10px 2px rgba(0, 0, 0, 0.4),
-                    0 10px 30px 4px rgba(0, 0, 0, 0.2);
-
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                column-gap: 32px;
-
-                .middle-btn-box {
-                    width: 80px;
-                    height: 60px;
-                    margin-bottom: 10px;
-
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    flex-direction: column;
-                    row-gap: 6px;
-
-                    .start,
-                    .reset {
-                        background: linear-gradient(180deg, rgba(40, 40, 40, 1), rgba(50, 50, 50, 1));
-                        width: 100%;
-                        height: 50%;
-                        border: none;
-                        border-radius: 6px;
-                        box-shadow: inset 0 0 0 2px rgba(51, 51, 51, 1), 0 1px 0 1px rgba(100, 100, 100, 0.9),
-                            0 4px 2px 0 rgba(0, 0, 0, 0.9), 0 4px 6px 2px rgba(0, 0, 0, 0.4);
-
-                        color: $text-color-light;
-                        font-size: 0.6em;
-                        text-transform: uppercase;
-                    }
-                }
-                .check,
-                .start,
-                .reset {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    transition: 0.3s ease-in-out;
-                    cursor: pointer;
-                }
-                .check:hover,
-                .start:hover,
-                .reset:hover {
-                    background: $winner-color;
-                }
-
-                .check,
-                .guess {
-                    background: $text-color-light;
-                    width: 120px;
-                    height: 48px;
-                    margin-bottom: 10px;
-                    border: none;
-                    border-radius: 6px;
-                    box-shadow: inset 0 0 0 3px rgba(51, 51, 51, 1), 0 1px 0 1px rgba(100, 100, 100, 0.9),
-                        0 4px 2px 0 rgba(0, 0, 0, 0.9), 0 4px 6px 2px rgba(0, 0, 0, 0.4);
-
-                    color: $text-color-dark;
-                    font-size: 1em;
-                    text-transform: uppercase;
-                }
-                .guess {
-                    padding: 5px 15px 5px 30px;
-                    outline: none;
-
-                    font-size: 1em;
-                    text-align: center;
-                }
-                .guess::placeholder {
-                    color: $text-color-dark;
-                }
-                .guess::-webkit-inner-spin-button,
-                .guess::-webkit-outer-spin-button {
-                    opacity: 1;
-                }
+                font-size: 0.6em;
+                text-transform: uppercase;
             }
         }
-        .guess-my-number.active {
-            .screen {
-                .number-wrapper {
-                    .number {
-                        font-size: 4em;
-                        opacity: 1;
-                    }
-                }
-                .number,
-                .message,
-                .scores-container {
-                    opacity: 1;
-                    .between {
-                        opacity: 1;
-                    }
-                }
-                .controls {
-                    .check,
-                    .reset,
-                    .start {
-                        background: $invalid-color;
-                    }
-                }
-            }
+        .check,
+        .start,
+        .reset {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 0.3s ease-in-out;
+            cursor: pointer;
         }
-
-        .guess-my-number.invalid {
-            border: 4px solid $invalid-color;
-            animation: shake 250ms;
-
-            .screen {
-                color: $invalid-color;
-                .number,
-                .message,
-                .scores-container p {
-                    animation: shake 250ms;
-                }
-            }
-        }
-
-        @keyframes shake {
-            25% {
-                transform: translateX(6px);
-            }
-            50% {
-                transform: translateX(-6px);
-            }
-            75% {
-                transform: translateX(6px);
-            }
-            100% {
-                transform: translateX(-6px);
-            }
-        }
-        .guess-my-number.winner {
+        .check:hover,
+        .start:hover,
+        .reset:hover {
             background: $winner-color;
-            .tittle {
-                opacity: 0.1;
-            }
-            .screen {
-                color: $text-color-light;
-                .scores-container {
-                    opacity: 0.1;
-                }
-                .number-wrapper {
-                    .number {
-                        transform: scale(2);
-                    }
-                }
-                .message {
-                    transform: scale(1.4);
-                }
-            }
-            .controls {
-                opacity: 0.1;
+        }
+
+        .check,
+        .guess {
+            background: $text-color-light;
+            width: 120px;
+            height: 48px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 6px;
+            box-shadow: inset 0 0 0 3px rgba(51, 51, 51, 1), 0 1px 0 1px rgba(100, 100, 100, 0.9),
+                0 4px 2px 0 rgba(0, 0, 0, 0.9), 0 4px 6px 2px rgba(0, 0, 0, 0.4);
+
+            color: $text-color-dark;
+            font-size: 1em;
+            text-transform: uppercase;
+        }
+        .guess {
+            padding: 5px 15px 5px 30px;
+            outline: none;
+
+            font-size: 1em;
+            text-align: center;
+        }
+        .guess::placeholder {
+            color: $text-color-dark;
+        }
+        .guess::-webkit-inner-spin-button,
+        .guess::-webkit-outer-spin-button {
+            opacity: 1;
+        }
+    }
+}
+.guess-my-number.active {
+    .screen {
+        .number-wrapper {
+            .number {
+                font-size: 4em;
+                opacity: 1;
             }
         }
-        .guess-my-number.loser {
-            background: $invalid-color;
-            .tittle {
-                opacity: 0.1;
+        .number,
+        .message,
+        .scores-container {
+            opacity: 1;
+            .between {
+                opacity: 1;
             }
-            .screen {
-                color: $text-color-light;
-                .scores-container {
-                    opacity: 0.1;
-                }
-                .number-wrapper {
-                    .number {
-                        transform: scale(2);
-                    }
-                }
-                .message {
-                    transform: scale(1.4);
-                }
+        }
+        .controls {
+            .check,
+            .reset,
+            .start {
+                background: $invalid-color;
             }
-            .controls {
-                opacity: 0.1;
+        }
+    }
+}
+
+.guess-my-number.invalid {
+    border: 4px solid $invalid-color;
+    animation: shake 250ms;
+
+    .screen {
+        color: $invalid-color;
+        .number,
+        .message,
+        .scores-container p {
+            animation: shake 250ms;
+        }
+    }
+}
+
+@keyframes shake {
+    25% {
+        transform: translateX(6px);
+    }
+    50% {
+        transform: translateX(-6px);
+    }
+    75% {
+        transform: translateX(6px);
+    }
+    100% {
+        transform: translateX(-6px);
+    }
+}
+.guess-my-number.winner {
+    background: $winner-color;
+    .tittle {
+        opacity: 0.1;
+    }
+    .screen {
+        color: $text-color-light;
+        .scores-container {
+            opacity: 0.1;
+        }
+        .number-wrapper {
+            .number {
+                transform: scale(2);
             }
+        }
+        .message {
+            transform: scale(1.4);
+        }
+    }
+    .controls {
+        opacity: 0.1;
+    }
+}
+.guess-my-number.loser {
+    background: $invalid-color;
+    .tittle {
+        opacity: 0.1;
+    }
+    .screen {
+        color: $text-color-light;
+        .scores-container {
+            opacity: 0.1;
+        }
+        .number-wrapper {
+            .number {
+                transform: scale(2);
+            }
+        }
+        .message {
+            transform: scale(1.4);
+        }
+    }
+    .controls {
+        opacity: 0.1;
+    }
+}
+
+@media only screen and (max-width: 60rem) {
+    main {
+        .guess-my-number {
+            transform: scale(0.8);
+        }
+    }
+}
+
+@media only screen and (max-width: 35rem) {
+    main {
+        .guess-my-number {
+            transform: scale(0.6);
         }
     }
 }
