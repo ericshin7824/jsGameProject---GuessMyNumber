@@ -81,7 +81,7 @@ document.querySelector('.check').addEventListener('click', function () {
     }, 300);
 });
 
-// to reset
+// to reset game
 document.querySelector('.reset').addEventListener('click', function () {
     // set bact to default
     if (playing) {
@@ -89,7 +89,7 @@ document.querySelector('.reset').addEventListener('click', function () {
     }
 });
 
-// to start
+// to start game
 document.querySelector('.start').addEventListener('click', () => {
     // check player playing or not
     if (!playing) {
